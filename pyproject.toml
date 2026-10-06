@@ -1,0 +1,26 @@
+[project]
+name = "llm-kagi"
+version = "0.1"
+description = "LLM plugin for the Kagi Search and Extract APIs: tools, fragments and CLI commands"
+readme = "README.md"
+authors = [{name = "Yorick van Pelt"}]
+license = "Apache-2.0"
+classifiers = []
+requires-python = ">=3.10"
+dependencies = [
+    "llm>=0.26",
+    "httpx",
+]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["llm_kagi"]
+
+[project.entry-points.llm]
+kagi = "llm_kagi"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-httpx"]
